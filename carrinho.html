@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de compras</title>
+    <link rel="stylesheet" href="style3.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script async src="script1.js"></script>
+</head>
+<body>
+    <header>
+    <h1>Carrinho de compras - <span>MERCADO</span>PARAGUAY</h1>
+    </header>
+    <main>
+<div class="page-title">Seu carrinho</div>
+<div class="content">
+    <section>
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                    <th>-</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="cart-product">
+                    <td>
+                        
+                        <div class="product">
+                            <img src="/images/products/product-8.png" alt="Produto 1">
+                            <div class="info">
+                                <div class="name">Nome do produto</div>
+                                <div class="category">Categoria</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="product-value">R$ 9.299,00</td>
+                    <td>
+                        <div class="qty">
+                            <button><i class='bx bx-minus' ></i></button>
+                            <span class="product-quantify">1</span>
+                            <button><i class='bx bx-plus'></i></button>
+                        </div>
+                    </td>
+                    <td>R$ 9.299,00</td>
+                    <td>
+                    <button class="remove"><i class="bx bx-x"></i></button>
+                </td>
+                </tr>
+
+                <tr class="cart-product">
+                    <td>
+                        <div class="product">
+                            <img src="/images/products/product-6.png" alt="Produto 1">
+                            <div class="info">
+                                <div class="name">Nome do produto</div>
+                                <div class="category">Categoria</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="product-value">R$ 379,90</td>
+                    <td>
+                        <div class="qty">
+                            <button><i class='bx bx-minus' ></i></button>
+                            <span class="product-quantify">2</span>
+                            <button><i class='bx bx-plus'></i></button>
+                        </div>
+                    </td>
+                    <td>R$ 759,80</td>
+                    <td>
+                    <button class="remove"><i class="bx bx-x"></i></button>
+                </td>
+                </tr>
+
+                <tr class="cart-product">
+                    <td>
+                        <div class="product">
+                            <img src="/images/products/product-13.png" alt="Produto 1">
+                            <div class="info">
+                                <div class="name">Nome do produto</div>
+                                <div class="category">Categoria</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="product-value">R$ 699,90</td>
+                    <td>
+                        <div class="qty">
+                            <button><i class='bx bx-minus' ></i></button>
+                            <span class="product-quantify">1</span>
+                            <button><i class='bx bx-plus'></i></button>
+                        </div>
+                    </td>
+                    <td>R$ 699,90</td>
+                    <td>
+                    <button class="remove"><i class="bx bx-x"></i></button>
+                </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </section>
+    <aside>
+    <div class="box">
+        <header>Resumo das compras</header>
+        <div class="info">
+        <div><h4>Sub-total</h4><span>R$ 10.758,70</span></div>
+        <div><span>Frete</span>Gratuito</div>
+        <div><button>Adicionar cupom de desconto<i class='bx bx-right-arrow-alt' ></i></button></div>
+        </div>
+    <footer class="amount">
+        <h3>Total</h3>
+        <span>R$ 10.758,70</span>
+    </footer>
+    </div>
+    <button class="fin-button">Finalizar Compra</button>
+</aside>
+</div>
+    </main>
+    
+</body>
+</html>
