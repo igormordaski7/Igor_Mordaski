@@ -1,3 +1,73 @@
+<!--Referente ao codigo if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", ready);
+} else {
+    ready();
+} Este bloco de código verifica se o documento HTML ainda está carregando. 
+Se estiver, ele adiciona um ouvinte de evento (DOMContentLoaded) que chama a função ready quando o carregamento estiver completo.
+Se o documento já estiver carregado, ele chama a função ready imediatamente.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Em questão a function ready(). Esta função é chamada quando o documento está pronto. 
+Ela adiciona ouvintes de eventos de clique a vários elementos na página, como botões de remoção e botões de ajuste de quantidade. 
+Quando esses elementos são clicados, as funções correspondentes (removeProduct, adjustQuantity) são chamadas. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Pagina carrinho.html:
+Referente a function removeProduct(event), ela é chamada quando um botão de remoção é clicado.
+Ela remove o contêiner do produto do DOM e, em seguida, chama updateTotal para recalcular o valor total do carrinho.
+
+Maneira para usar: Clicando no botão que contém um X, o mesmo estará removendo os materiais do seu carrinho. OBS: Deve ser clicado exatamente no X.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Pagina carrinho.html:
+A function adjustQuantity(event) é chamada  quando um botão de ajuste de quantidade é clicado. 
+Ela atualiza a quantidade de um produto com base no botão clicado e, em seguida, chama updateTotal para recalcular o valor total do carrinho.
+
+Maneira de usar: Clicando no botão + ou - , ele estará aumentando ou diminuindo a quantidade solicitada do produto, posteriormente atualizando o valor final da compra.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+function updateTotal(). Esta função é responsável por calcular o valor total do carrinho, iterando sobre os produtos no carrinho e somando seus preços multiplicados pela quantidade. 
+Em seguida, ela formata o valor total como moeda brasileira (R$) e atualiza os elementos HTML que exibem o valor total no carrinho.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Na pagina index.html:
+const navbar = document.querySelector(".navbar");
+const menuButton = document.querySelector(".menu-button");
+Aqui, o script seleciona os elementos HTML com as classes "navbar" e "menu-button" e os armazena nas variáveis navbar e menuButton, respectivamente.
+
+menuButton.addEventListener("click", () => {
+    navbar.classList.toggle("show-menu");
+});
+Este trecho de código acima adiciona um ouvinte de evento de clique ao botão de menu (menuButton). Quando o botão é clicado, a função de retorno de 
+chamada é executada. Essa função usa classList.toggle para adicionar ou remover a classe "show-menu" do elemento navbar. 
+Isso cria um efeito de alternância, mostrando ou ocultando o menu, dependendo do estado atual. 
+
+A função do menu fica visivel na pagina quando o tamanho da tela seria de um dispositivo movel, dessa forma você consegue abrir o menu ou fechar.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Na pagina index.html:
+document.addEventListener("DOMContentLoaded", function() {
+    const menuButton = document.querySelector(".menu-button");
+    const navIconContainer = document.querySelector(".nav-icon-container");
+
+    menuButton.addEventListener("click", function() {
+        navIconContainer.classList.toggle("added-class");
+    });
+});
+Este trecho de código adiciona um ouvinte de evento para o evento DOMContentLoaded. Isso garante que o código dentro da função de retorno de chamada 
+seja executado após o carregamento completo do documento. Dentro dessa função de retorno de chamada, outro ouvinte de evento de clique é adicionado ao menuButton. 
+Quando o botão de menu é clicado, a classe "added-class" é alternadamente adicionada ou removida do elemento navIconContainer. Assumindo que existem ícones 
+de navegação no navIconContainer, essa adição e remoção da classe podem ser usadas para aplicar algum efeito visual aos ícones, 
+alterando sua aparência quando o menu é ativado.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
 <!DOCTYPE html>
 <html lang="pt br">
 <head>
@@ -22,8 +92,8 @@
                 </ul>
             </nav>
             <div class="nav-icon-container">
-                 <a href = carrinho.html> <img src="/images/carrinhoCompras.png" alt="Carrinho de compras"></a>
-                <img src="/images/menu.png" alt="Menu do site" class="menu-button"> 
+                 <a href = carrinho.html> <img src="carrinhoCompras.png" alt="Carrinho de compras"></a>
+                <img src="menu.png" alt="Menu do site" class="menu-button"> 
             </div>
         </div>
     </div>
@@ -40,7 +110,7 @@
                         <button>Comprar agora &#8594;</button>
                     </div>
                         <div class="header-bottom-side-right">
-                        <img src="/images/notebook.png" alt="Notebook principal"/>
+                        <img src="notebook.png" alt="Notebook principal"/>
                     </div>
                 </div>
             </div>
@@ -50,9 +120,9 @@
         <div class="gray-background">
             <div class="page-inner-content">
                 <div class="cols cols-3">
-                    <img src="/images/Nitro 5.png" alt="Nitro 5">
-                    <img src="/images/Lenovo Gaming.png" alt="Lenovo Gaming">
-                    <img src="/images/Dell G-15.png" alt="Dell G-15">
+                    <img src="Nitro 5.png" alt="Nitro 5">
+                    <img src="Lenovo Gaming.png" alt="Lenovo Gaming">
+                    <img src="Dell G-15.png" alt="Dell G-15">
                 </div>
             </div>
             </div>
@@ -61,25 +131,25 @@
                 <div class="subtitle-underline"></div>
                 <div class="cols cols-4">
                     <div class="product">
-                        <img src="/images/products/product-4.png" alt="Kit Teclado Mouse" class="product-image">
+                        <img src="product-4.png" alt="Kit Teclado Mouse" class="product-image">
                         <p class="product-name add-to-cart">Combo Gamer Meetion</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price">R$ 139,90</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-5.png" alt="Placa de Video" class="product-image">
+                        <img src="product-5.png" alt="Placa de Video" class="product-image">
                         <p class="product-name">Placa de Vídeo NVIDIA GTX 1650</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
                         <p class="product-price">R$ 849,99</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-6.png" alt="Controle PS5" class="product-image">
+                        <img src="product-6.png" alt="Controle PS5" class="product-image">
                         <p class="product-name">Controle Sony DualSense PS5, Sem Fio, Branco</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                         <p class="product-price">R$ 379,90</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-7.png" alt="Cadeira Gamer" class="product-image">
+                        <img src="product-7.png" alt="Cadeira Gamer" class="product-image">
                         <p class="product-name">Cadeira Gamer Frizzi</p>
                         <p class="rate">&#9733;&#9733;&#9734;&#9734;&#9734;</p>
                         <p class="product-price">R$ 449,90</p>
@@ -92,49 +162,49 @@
                 <div class="subtitle-underline"></div>
                 <div class="cols cols-4">
                     <div class="product">
-                        <img src="\images\products\product-8.png" alt="Iphone 14" class="product-image">
+                        <img src="product-8.png" alt="Iphone 14" class="product-image">
                         <p class="product-name">Iphone 14 Pro Max 512GB</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                         <p class="product-price">R$ 9.299,00</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-9.png" alt="Samsung S23" class="product-image">
+                        <img src="product-9.png" alt="Samsung S23" class="product-image">
                         <p class="product-name">Samsung Galaxy S23 Ultra 1TB</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                         <p class="product-price">R$ 9.400,00</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-10.png" alt="Asus Rog" class="product-image">
+                        <img src="product-10.png" alt="Asus Rog" class="product-image">
                         <p class="product-name">Asus Rog Phone 3 Gamer</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price">R$ 3.100,00</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-11.png" alt="Xiaomi 13" class="product-image">
+                        <img src="product-11.png" alt="Xiaomi 13" class="product-image">
                         <p class="product-name">Xiaomi 13 Ultra</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
                         <p class="product-price">R$ 8.259,00</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-12.png" alt="Xbox" class="product-image">
+                        <img src="product-12.png" alt="Xbox" class="product-image">
                         <p class="product-name">Xbox Series X</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                         <p class="product-price">R$ 4.300,00</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-13.png" alt="Volante e pedal" class="product-image">
+                        <img src="product-13.png" alt="Volante e pedal" class="product-image">
                         <p class="product-name">Racing Wheel GT480 Ferrari</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                         <p class="product-price">R$ 699,90</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-14.png" alt="PlayStation" class="product-image">
+                        <img src="product-14.png" alt="PlayStation" class="product-image">
                         <p class="product-name">PlayStation 5</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
                         <p class="product-price">R$ 4.500,00</p>
                     </div>
                     <div class="product">
-                        <img src="\images\products\product-15.png" alt="PC Gamer" class="product-image">
+                        <img src="product-15.png" alt="PC Gamer" class="product-image">
                         <p class="product-name">PC Gamer RTX 3090</p>
                         <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
                         <p class="product-price">R$ 12.250,00</p>
@@ -150,8 +220,8 @@
                 <p> Baixe nosso aplicativo</p>
                 <p>Disponivel para Android e IOS</p>
                 <div>
-                    <img src="/images/app-store.png" alt="APP Store">
-                    <img src="/images/play-store.png" alt="Play Store">
+                    <img src="app-store.png" alt="APP Store">
+                    <img src="play-store.png" alt="Play Store">
                 </div>
             </div>
             <div class="logo-footer">
@@ -182,6 +252,16 @@
         menuButton.addEventListener("click", () => {
             navbar.classList.toggle("show-menu");
         })
+
+        document.addEventListener("DOMContentLoaded", function() {
+        const menuButton = document.querySelector(".menu-button");
+        const navIconContainer = document.querySelector(".nav-icon-container");
+
+        menuButton.addEventListener("click", function() {
+        navIconContainer.classList.toggle("added-class");
+    });
+});
+
     </script>
 </body>
 </html> 
