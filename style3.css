@@ -7,6 +7,7 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     background: #c7c7c7;
+    font-size: 16px;
 }
 
 button{
@@ -21,10 +22,24 @@ body > header {
     text-align: center;
     display: flex;
     justify-content: center;
+   
 }
 
 header span{
     color: #0084ff;
+}
+
+header img{
+    position:absolute;
+    top: 16px; 
+    left: 30px;
+    margin-left: 0;     
+    max-width: 60px;
+    max-height: 60px;
+}
+
+header h1{
+    margin-left: 20px;
 }
 
 body > main {
@@ -35,7 +50,7 @@ body > main {
 .page-title{
     font-size: 40px;
     padding: 50px 0;
-    text-align: center;
+    
 }
 .content{
     display: flex;
@@ -218,4 +233,58 @@ footer{
 
 .fin-button:hover{
     background-color: rgb(4, 98, 4);
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    header img {
+        margin-top: 10px;
+        max-width: 40px;
+        max-height: 40px;
+    }
+
+    .page-title {
+        font-size: 28px;
+        padding: 30px 0;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .content section,
+    .content aside {
+        width: 100%;
+        min-width: auto;
+    }
+
+    .product img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+
+    header img {
+        margin-top: 5px;
+        max-width: 30px;
+        max-height: 30px;
+    }
+
+    .page-title {
+        font-size: 24px;
+        padding: 20px 0;
+    }
+
+    .product img {
+        width: 60px;
+        height: 60px;
+    }
 }
